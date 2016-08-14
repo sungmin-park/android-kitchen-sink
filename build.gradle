@@ -1,0 +1,40 @@
+buildscript {
+    ext.kotlin_version = '1.0.3'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:2.1.2'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+repositories {
+    jcenter()
+}
+
+android {
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        applicationId "com.github.sungminpark.android.kitchenSink"
+    }
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+
+    sourceSets.main.java.srcDirs += 'src/main/kotlin'
+
+    compileOptions {
+        targetCompatibility 1.7
+        sourceCompatibility 1.7
+    }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
