@@ -1,5 +1,6 @@
 buildscript {
     ext.kotlin_version = '1.0.3'
+    ext.anko_version = '0.9'
 
     repositories {
         jcenter()
@@ -23,6 +24,8 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         applicationId "com.github.sungminpark.android.kitchenSink"
+
+        vectorDrawables.useSupportLibrary = true
     }
     compileSdkVersion 23
     buildToolsVersion '23.0.3'
@@ -36,5 +39,9 @@ android {
 }
 
 dependencies {
+    compile "com.android.support:appcompat-v7:23.4.0"
+    compile "org.jetbrains.anko:anko-sdk15:$anko_version"
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

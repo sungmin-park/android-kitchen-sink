@@ -3,7 +3,9 @@
           package="com.github.sungminpark.android.kitchenSink">
 
     <application
-        android:label="KitchenSink">
+        android:label="KitchenSink"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:allowBackup="false">
         <activity
             android:name=".MainActivity"
             android:label="Main"
@@ -15,5 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".AppBarActivity"/>
     </application>
 </manifest>
