@@ -20,7 +20,7 @@ class AppBarActionViewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         verticalLayout {
-            toolbar {
+            toolbar(R.style.AppBarTheme) {
                 lparams(ViewGroup.LayoutParams.MATCH_PARENT, attrAsDimen(R.attr.actionBarSize))
                 backgroundColor = attribute(R.attr.colorPrimary).data
                 setElevation(dip(4))

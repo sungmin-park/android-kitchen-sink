@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:icon="@drawable/ic_favorite_border_black_24dp"
+        android:icon="@drawable/ic_favorite_border_white_24dp"
         android:title="좋아요"
         android:id="@+id/action_toggle_like"
         app:showAsAction="ifRoom"/>

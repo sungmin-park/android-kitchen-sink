@@ -17,7 +17,7 @@ class AppBarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         verticalLayout {
-            toolbar {
+            toolbar(R.style.AppBarTheme) {
                 lparams(MATCH_PARENT, attrAsDimen(R.attr.actionBarSize))
                 backgroundColor = attribute(R.attr.colorPrimary).data
                 setElevation(dip(4))
@@ -40,7 +40,7 @@ class AppBarActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_toggle_like -> {
                 like = like == false
-                item.setIcon(if (like) R.drawable.ic_favorite_black_24dp else R.drawable.ic_favorite_border_black_24dp)
+                item.setIcon(if (like) R.drawable.ic_favorite_white_24dp else R.drawable.ic_favorite_border_white_24dp)
                 false
             }
 
