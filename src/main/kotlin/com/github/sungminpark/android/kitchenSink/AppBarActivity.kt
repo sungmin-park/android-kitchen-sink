@@ -1,9 +1,7 @@
 package com.github.sungminpark.android.kitchenSink
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
@@ -11,16 +9,6 @@ import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.backgroundColor
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.verticalLayout
-
-fun Context.attribute(value: Int): TypedValue {
-    val ret = TypedValue()
-    theme.resolveAttribute(value, ret, true)
-    return ret
-}
-
-fun Context.attrAsDimen(value: Int): Int {
-    return TypedValue.complexToDimensionPixelSize(attribute(value).data, resources.displayMetrics)
-}
 
 class AppBarActivity : AppCompatActivity() {
     var like = false
