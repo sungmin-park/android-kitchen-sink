@@ -1,11 +1,11 @@
 package com.github.sungminpark.android.kitchenSink
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import org.jetbrains.anko.button
-import org.jetbrains.anko.onClick
-import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.verticalLayout
 
 class MainActivity : Activity() {
@@ -13,15 +13,16 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         verticalLayout {
-            listOf(
-                    "App Bar" to { startActivity<AppBarActivity>() },
-                    "App Bar Up" to { startActivity<AppBarUpActivity>() }
-            ).forEach {
-                val (text, click) = it
-                button {
-                    lparams(MATCH_PARENT); this.text = text; onClick { click() }
-                }
-            }
+            listOf(AppBarActivity::class.java, AppBarUpActivity::class.java, AppBarActionViewsActivity::class.java)
+                    .map { cls ->
+                        cls.simpleName to View.OnClickListener { startActivity(Intent(this@MainActivity, cls)) }
+                    }
+                    .forEach {
+                        val (text, click) = it
+                        button {
+                            lparams(MATCH_PARENT); this.text = text; setOnClickListener(click)
+                        }
+                    }
         }
     }
 }
