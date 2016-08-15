@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import org.jetbrains.anko.appcompat.v7.onQueryTextListener
 import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.backgroundColor
+import org.jetbrains.anko.dip
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.verticalLayout
 
@@ -22,6 +23,7 @@ class AppBarActionViewsActivity : AppCompatActivity() {
             toolbar {
                 lparams(ViewGroup.LayoutParams.MATCH_PARENT, attrAsDimen(R.attr.actionBarSize))
                 backgroundColor = attribute(R.attr.colorPrimary).data
+                setElevation(dip(4))
                 setSupportActionBar(this)
             }
         }
