@@ -13,9 +13,14 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         verticalLayout {
-            button {
-                lparams(width = MATCH_PARENT); text = "App Bar"
-                onClick { startActivity<AppBarActivity>() }
+            listOf(
+                    "App Bar" to { startActivity<AppBarActivity>() },
+                    "App Bar Up" to { startActivity<AppBarUpActivity>() }
+            ).forEach {
+                val (text, click) = it
+                button {
+                    lparams(MATCH_PARENT); this.text = text; onClick { click() }
+                }
             }
         }
     }
